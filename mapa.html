@@ -1,0 +1,378 @@
+<html>
+  <head>
+    <title>apolo</title>
+
+    <link rel="stylesheet"  href="css/mapa.css" />
+    <script type="module" src="js/mapa.js"></script>
+
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""/>
+  </head>
+  <body class="bg-info">
+
+
+
+
+    <!-- ========== navbar ========== -->
+
+
+  <nav class="navbar sticky-top" id="Navbar">
+    <div class="container d-flex justify-content-space-around>
+      <a class="navbar-brand" href="#">
+        <img src="img/P1.png" class="rounded-circle" id="apolo" alt="logo" >  
+      </a>
+      <h1 class="display-3 d-inline-block align-text-top"><strong>APOLO</strong></h1>
+    
+         <a href="#registrar">
+            <img src="img/perfil transparente.png" class="float-end" id="perfil" alt="">
+        </a>
+      </div>
+      
+      
+      <!-- ========== Start offcanvas carrito ========== -->
+
+
+      <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+        <i class="fa-solid fa-cart-shopping" style="font-size: 50px;"></i>
+      </button>
+      
+
+<div class="offcanvas offcanvas-end" style="background-color: #caa9ff;" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header" style="background-color: #873eff;">
+    <div class="container text-center">
+      <div class="row">
+        <h5 class="offcanvas-title fw-bold" id="offcanvasRightLabel">CARRITO DE COMPRAS</h5>
+        <h5 class="offcanvas-title fw-bold">Materiales Seleccionados</h5>
+      </div>
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+<div class="offcanvas-body p-0">
+  <div class="cart">
+
+    <ul id="cart-list">
+
+        <!-- cart items will be rendered here -->
+
+    </ul>
+
+    <p id="total-price">Total: $0.00</p>
+
+    
+
+</div>
+
+
+  <div class="listCart">
+    
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-6 position-absolute bottom-0 start-0" style="background-color: #873eff;">
+          <div id="cart-actions">
+
+    
+            <!-- clear cart button will be appended here -->
+        
+        </div>
+        </div>
+        <div class="col-6 position-absolute bottom-0 end-0" style="background-color: #873eff;">
+          <button type="button" class="btn fw-semibold" id="checkout-btn">
+            Comprar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+</nav>
+<!-- ========== End offcanvas carrito ========== -->
+
+<!-- ========== end navbar ========== -->
+
+
+<!-- ========== mapa (leaflet) ========== -->
+
+
+       <div class="container">
+        <div class="shadow-lg mt-3" id="map"></div>
+       </div>
+
+
+<!-- ========== mapa (leaflet) ========== -->
+
+
+
+
+<!-- ========== Start catalogo ========== -->
+<div id="ferreteria"></div>
+  <br><br><br><br>
+   <div class="container mt-5">
+      <div class="row">
+        <div class="col-lg-4 offset-lg-4 text-center">
+          <div><div class="section-heading">
+            <h6>Materiales de Ferretería</h6>
+            <h2>Ferro Caribe</h2>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+
+   <div class="cart-container">
+
+    <div class="product-list">
+
+        <ul id="product-list">
+
+            <!-- products will be rendered here -->
+
+        </ul>
+
+    </div>
+       
+</div>
+
+
+ 
+
+    <!-- ========== Start carrito nuevo ========= -->
+
+<!-- ========== <img src= "${product.imagen}" alt="">
+                <span>${product.name}</span>
+                <span>$${product.price}</span>
+                <span>${product.categoria}</span>
+                <br>
+                <button class="add-to-cart-btn" data-product-id="${product.id}">Add to Cart</button> ========== -->
+
+<!-- ========= ========== -->
+
+      <!-- ========== End carrito ========== -->
+      
+
+  <!-- ========== Start carrito viejo ========== -->
+   
+<!-- ==========<div class="row row-cols-1 row-cols-md-3 g-5 text-start listProduct">
+    <div class="col item">
+      <div class="card w-80 border border-2 rounded">
+        <div class="col md-4">
+          <img src="img/materiales/construcción/ale66-53.jpg" class="img-fluid rounded mx-auto d-block w-80" alt="...">
+        </div>
+          <div class="card-body" style="background-color: #caa9ff;">
+              <h5 class="card-title">Hachuela 8LBS Worksite</h5>
+              <h6 class="card-text">Categoría: construcción</h6>
+              <h6 class="card-text">Cantidad: 4</h6>
+              <span class="fw-bold">precio:</span>
+              <a class="card-text btn fw-bold ms-2 addCart" style="background-color: #873eff">11.53$</a>
+          </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card w-80 border border-2 rounded">
+      <div class="col md-4">
+        <img src="img/materiales/construcción/ale66-55.jpg" class="img-fluid rounded mx-auto d-block w-80" alt="...">
+      </div>
+        <div class="card-body" style="background-color: #caa9ff;">
+          <h5 class="card-title">Mandarria 8LBS Worksite</h5>
+          <h6 class="card-text">Categoría: construcción</h6>
+          <h6 class="card-text">Cantidad: 8</h6>
+          <span class="fw-bold">precio:</span>
+          <a class="card-text btn fw-bold ms-2 addCart" style="background-color: #873eff">28.00$</a>
+        </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card border border-2 rounded">
+      <div class="col md-4">
+        <img src="img/materiales/electricidad/f517.jpg" class="img-fluid rounded mx-auto d-block w-90" alt="...">
+      </div>
+        <div class="card-body" style="background-color: #caa9ff;">
+          <h5 class="card-title">Socate Porcelana</h5>
+          <h6 class="card-text">Categoría: electricidad</h6>
+          <h6 class="card-text">Cantidad: 30</h6>
+          <span class="fw-bold">precio:</span>
+          <a class="card-text btn fw-bold ms-2" style="background-color: #873eff">0.31$</a>
+        </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card border border-2 rounded">
+      <div class="col md-4">
+        <img src="img/materiales/electricidad/f522e12.jpg" class="img-fluid rounded mx-auto d-block w-90" alt="...">
+      </div>
+        <div class="card-body" style="background-color: #caa9ff;">
+          <h5 class="card-title">Socate Porcelana</h5>
+          <h6 class="card-text">Categoría: electricidad</h6>
+          <h6 class="card-text">Cantidad: 50</h6>
+          <span class="fw-bold">precio:</span>
+          <a class="card-text btn fw-bold ms-2" style="background-color: #873eff">0.20$</a>
+        </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card border border-2 rounded">
+      <div class="col md-4">
+        <img src="img/materiales/electricidad/sy106.jpg" class="img-fluid rounded mx-auto d-block w-90" alt="...">
+      </div>
+        <div class="card-body" style="background-color: #caa9ff;">
+          <h5 class="card-title">Socate Plástico</h5>
+          <h6 class="card-text">Categoría: electricidad</h6>
+          <h6 class="card-text">Cantidad: 50</h6>
+          <span class="fw-bold">precio:</span>
+          <a class="card-text btn fw-bold ms-2" style="background-color: #873eff">0.44$</a>
+        </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card border border-2 rounded">
+      <div class="col md-4">
+        <img src="img/materiales/electricidad/sy519b.png" class="img-fluid rounded mx-auto d-block w-90" alt="...">
+      </div>
+        <div class="card-body" style="background-color: #caa9ff;">
+          <h5 class="card-title">Socate Pata Porcelana</h5>
+          <h6 class="card-text">Categoría: electricidad</h6>
+          <h6 class="card-text">Cantidad: 50</h6>
+          <span class="fw-bold">precio:</span>
+          <a class="card-text btn fw-bold ms-2" style="background-color: #873eff">0.20$</a>
+        </div>
+    </div>
+  </div>  
+  <div class="col">
+    <div class="card border border-2 rounded">
+      <div class="col md-4">
+        <img src="img/materiales/plomeria/ale06-02.jpg" class="img-fluid rounded mx-auto d-block w-90" alt="...">
+      </div>
+        <div class="card-body" style="background-color: #caa9ff;">
+          <h5 class="card-title">Manzana 8</h5>
+          <h6 class="card-text">Categoría: Plomería</h6>
+          <h6 class="card-text">Cantidad: 100</h6>
+          <span class="fw-bold">precio:</span>
+          <a class="card-text btn fw-bold ms-2" style="background-color: #873eff">3.76$</a>
+        </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card border border-2 rounded">
+      <div class="col md-4">
+        <img src="img/materiales/plomeria/6001282.jpg" class="img-fluid rounded mx-auto d-block w-90" alt="...">
+      </div>
+        <div class="card-body" style="background-color: #caa9ff;">
+          <h5 class="card-title">Rolinera 6202 para QB70/QB80/TCP158</h5>
+          <h6 class="card-text">Categoría: Plomería</h6>
+          <h6 class="card-text">Cantidad: 100</h6>
+          <span class="fw-bold">precio:</span>
+          <a class="card-text btn fw-bold ms-2" style="background-color: #873eff">1.56$</a>
+        </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card border border-2 rounded">
+      <div class="col md-4">
+        <img src="img/materiales/plomeria/tpt1-2cl.jpg" class="img-fluid rounded mx-auto d-block w-90" alt="...">
+      </div>
+        <div class="card-body" style="background-color: #caa9ff;">
+          <h5 class="card-title">Tanque Precargado 2LTS</h5>
+          <h6 class="card-text">Categoría: Plomería</h6>
+          <h6 class="card-text" style="color: red">Cantidad: AGOTADO</h6>
+          <span class="fw-bold">precio:</span>
+          <a class="card-text btn fw-bold ms-2" style="background-color: #873eff">5.58$</a>
+        </div>
+    </div>
+  </div>
+</div>  ========== -->
+
+
+
+  <!-- ========== End carrito viejo ========== -->
+ 
+<!-- ***** Reservation Us Area Starts ***** -->
+<section class="section" id="registrar">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-6 align-self-center">
+              <div class="left-text-content">
+                  <div class="section-heading">
+                      <h6>¿No tienes cuenta?</h6>
+                      <h2>¡Registrate aquí y disfruta de los servicios de Apolo!</h2>
+                  </div>
+                  <p>En esta aplicación web podrás ubicar las ferreterías de la parroquia Coquivacoa,
+                      mostrando el extenso catálogo ferretero que ofrecen.
+                  </p>
+              </div>
+          </div>
+          <div class="col-lg-6">
+              <div class="contact-form">
+                  <form id="contact" action="" method="post">
+                    <div class="row">
+                      <div class="col-lg-12">
+                          <h4>Registrate aquí</h4>
+                      </div>
+                      <div class="col-lg-6 col-sm-12">
+                        <fieldset>
+                          <input name="name" type="text" id="name" placeholder="Nombre*" required="">
+                        </fieldset>
+                      </div>
+                      <div class="col-lg-6 col-sm-12">
+                        <fieldset>
+                        <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Correo" required="">
+                      </fieldset>
+                      </div>
+                      <div class="col-lg-6 col-sm-12">
+                        <fieldset>
+                          <input name="phone" type="text" id="phone" placeholder="Número de teléfono" required="">
+                        </fieldset>
+                      </div>
+                      <div class="col-md-6 col-sm-12">
+                        <fieldset>
+                          <input name="phone" type="text" placeholder="Dirección" required="">
+                          </select>
+                        </fieldset>
+                      </div>
+                      <div class="col-lg-12">
+                        <fieldset>
+                          <button type="submit" id="form-submit" class="main-button-icon">Registrarse</button>
+                        </fieldset>
+                      </div>
+                    </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- ========== End catalogo ========== -->
+
+
+
+
+
+
+  <!-- Your existing code here -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+  integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+  crossorigin=""></script>
+
+
+<script src="js/mapa.js"></script>
+<script src="js/carrito.js"></script>
+
+
+  </body>
+</html>
+
+
+
+
+   
+
+
