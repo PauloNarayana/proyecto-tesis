@@ -1,1 +1,75 @@
-
+[
+    {
+        "id": 1,
+        "name": "Hachuela 8LBS Worksite",
+        "cantidad": 4,
+        "price": "11.53",
+        "imagen": "../img/materiales/construcción/ale66-53.jpg",
+        "categoria": "construcción"
+    },
+    {
+        "id": 2,
+        "name": "Mandarria 8LBS Worksite",
+        "cantidad": 8,
+        "price": "28.00",
+        "imagen": "../img/materiales/construcción/ale66-55.jpg",
+        "categoria": "construcción"
+        
+    },
+    {
+        "id": 3,
+        "name": "Socate Porcelana",
+        "cantidad": 30,
+        "price": "0.31",
+        "imagen": "../img/materiales/electricidad/f517.jpg",
+        "categoria": "electricidad"
+    },
+    {
+        "id": 4,
+        "name": "Socate Porcelana",
+        "cantidad": 50,
+        "price": "0.20",
+        "imagen": "../img/materiales/electricidad/f522e12.jpg",
+        "categoria": "electricidad"
+    },
+    {
+        "id": 5,
+        "name": "Socate Plástico",
+        "cantidad": 50,
+        "price": "0.44",
+        "imagen": "../img/materiales/electricidad/sy106.jpg",
+        "categoria": "electricidad"
+    },
+    {
+        "id": 6,
+        "name": "Socate Pata Porcelana",
+        "cantidad": 50,
+        "price": "0.20",
+        "imagen": "../img/materiales/electricidad/sy519b.png",
+        "categoria": "electricidad"
+    },
+    {
+        "id": 7,
+        "name": "Manzana 8",
+        "cantidad": 100,
+        "price": "3.76",
+        "imagen": "../img/materiales/plomeria/ale06-02.jpg",
+        "categoria": "plomeria"
+    },
+    {
+        "id": 8,
+        "name": "Rolinera 6202",
+        "cantidad": 100,
+        "price": "1.56",
+        "imagen": "../img/materiales/plomeria/6001282.jpg",
+        "categoria": "plomeria"
+    },
+    {
+        "id": 9,
+        "name": "Tanque Precargado 2LTS",
+        "cantidad": 0,
+        "price": "5.58",
+        "imagen": "../img/materiales/plomeria/tpt1-2cl.jpg",
+        "categoria": "plomeria"
+    }
+]
